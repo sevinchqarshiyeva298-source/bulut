@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Mustaqil ta'lim loyihasi</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 26px;
+        }
+        p {
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .status {
+            color: #1e9e3e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>1-Mustaqil ta'lim loyihasi</h1>
+        <p><strong>Mavzu:</strong> Lokal dasturni bulutli infratuzilmaga joylashtirish</p>
+        <p class="status">Holati: Dastur bulutli serverda (GitHub Pages) muvaffaqiyatli ishlamoqda!</p>
+        <p><strong>Joriy muhit:</strong> <span id="env">Aniqlanmoqda...</span></p>
+    </div>
+
+    <script>
+        const host = window.location.hostname;
+        const envText = document.getElementById('env');
+        if (host === '127.0.0.1' || host === 'localhost' || host === '') {
+            envText.textContent = 'Lokal kompyuter muhiti (' + (host || 'Lokal fayl') + ')';
+        } else {
+            envText.textContent = 'Bulutli infratuzilma (' + host + ')';
+        }
+    </script>
+</body>
+</html>
